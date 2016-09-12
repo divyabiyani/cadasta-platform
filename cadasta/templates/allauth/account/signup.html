@@ -10,6 +10,41 @@
 
 {% block content %}
 
+<div class="bs-callout bs-callout-warning hidden">
+  <h4>Oh snap!</h4>
+  <p>This form seems to be invalid :(</p>
+</div>
+
+<div class="bs-callout bs-callout-info hidden">
+  <h4>Yay!</h4>
+  <p>Everything seems to be ok :)</p>
+</div>
+
+<form id="demo-form" data-parsley-validate="">
+  <label for="fullname">Full Name * :</label>
+  <input class="form-control" name="fullname" required="" type="text" data-parsley-trigger="focusin focusout">
+
+  <label for="email">Email * :</label>
+  <input class="form-control" name="email" data-parsley-trigger="change" required="" type="email">
+
+  <input class="btn btn-default" value="validate" type="submit">
+
+</form>
+
+<script type="text/javascript">
+$(function () {
+  $('#demo-form').parsley().on('field:validated', function() {
+    var ok = $('.parsley-error').length === 0;
+    $('.bs-callout-info').toggleClass('hidden', !ok);
+    $('.bs-callout-warning').toggleClass('hidden', ok);
+  })
+  .on('form:submit', function() {
+    return false; // Don't submit form for this demo
+  });
+});
+</script>
+
+
 {% if form.non_field_errors %}
 <div id="messages">
   {% for message in form.non_field_errors %}
@@ -73,5 +108,19 @@
     {% blocktrans %}Already have an account? <a href="{{ login_url }}">Sign in</a>{% endblocktrans %}
   </p>
 </form>
+
+<script type="text/javascript">
+$(function () {
+  $('#signup_form').parsley().on('field:validated', function() {
+    var ok = $('.parsley-error').length === 0;
+    $('.bs-callout-info').toggleClass('hidden', !ok);
+    $('.bs-callout-warning').toggleClass('hidden', ok);
+  })
+  .on('form:submit', function() {
+    return false; // Don't submit form for this demo
+  });
+});
+</script>
+
 
 {% endblock %}
