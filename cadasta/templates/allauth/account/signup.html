@@ -61,7 +61,7 @@ $(function () {
 {% endif %}
 
 <form class="account-register form-narrow" id="signup_form" method="POST"
-      action="{% url 'account_signup' %}" novalidate>
+      action="{% url 'account_signup' %}" novalidate data-parsley-validate="">
   <h1>{% trans "Register for a free account" %}</h1>
 
   {% csrf_token %}

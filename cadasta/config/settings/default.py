@@ -53,7 +53,7 @@ INSTALLED_APPS = (
     'xforms',
 
     'crispy_forms',
-    #'parsley',
+    'parsley',
     'widget_tweaks',
     'django_countries',
     'leaflet',

@@ -4,7 +4,9 @@ from django.utils.translation import ugettext as _
 
 from .models import User
 
-# from parsley.decorators import parsleyfy
+from parsley.decorators import parsleyfy
+
+@parsleyfy
 
 class RegisterForm(forms.ModelForm):
     email = forms.EmailField(required=True)
