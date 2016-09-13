@@ -21,6 +21,7 @@
 @import "orgs";
 @import "resources";
 @import "single";
+@import "forms";
 @import "maps";
 
 /* =Fonts
@@ -1457,52 +1458,5 @@ ul.errorlist {
   display: block;
   text-transform: uppercase;
   padding-bottom: 2px;
-}
-
-/* =Contacts form styling
--------------------------------------------------------------- */
-
-tr.contacts-error {
-  background: $alert-warning-bg;
-  li {
-    padding: 0;
-  }
-  +tr td {
-    border-top: none;
-    padding-top: 0;
-    background: $alert-warning-bg;
-  }
-}
-
-/* =Party selection widget
--------------------------------------------------------------- */
-
-#select-party {
-  #party-select {
-    width: 100%;
-  }
-  .select2 {
-    display: block;
-    margin: 0.5em 0;
-    width: 100%;
-  }
-  #add-party {
-    padding: 6px 18px;
-    .glyphicon {
-      opacity: 0.5;
-      padding-right: 8px;
-    }
-  }
-}
-
-.select2-container {
-  .party-name {
-    display: block;
-  }
-  .party-type {
-    display: block;
-    font-size: 0.85em;
-    opacity: 0.75;
-  }
 }
 
